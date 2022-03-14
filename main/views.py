@@ -12,6 +12,20 @@ def charge(request):
     amount = 5
     if request.method == 'POST':
         print('Data:',request.POST)
+
+        customer = stripe.Customer.create(
+            email = request.POST['email'],
+            name = request.POST['nickname'],
+            source = request.POST['stripeToken'],
+        )
+
+        charge = stripe.Charge.create(
+            customer=customer,
+            amount=500,
+            currency = 'usd',
+            description = "Donation",
+
+        )
          
     return redirect(reverse('success', args=[amount]))
 
