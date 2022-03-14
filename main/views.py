@@ -9,9 +9,11 @@ def index(request):
     return render(request,'main/index.html')
 
 def charge(request):
-    amount = 5
+    
     if request.method == 'POST':
         print('Data:',request.POST)
+
+        amount = int(request.POST['amount'])
 
         customer = stripe.Customer.create(
             email = request.POST['email'],
@@ -21,7 +23,7 @@ def charge(request):
 
         charge = stripe.Charge.create(
             customer=customer,
-            amount=500,
+            amount=amount*100,  #amount in pennies
             currency = 'usd',
             description = "Donation",
 
