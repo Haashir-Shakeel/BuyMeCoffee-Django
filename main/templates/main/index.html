@@ -3,10 +3,7 @@
 {%block content%}
 
 <style type="text/css">
-    /**
-     * The CSS shown here will not be introduced in the Quickstart guide, but shows
-     * how you can use CSS to style your Element's container.
-     */
+
     .StripeElement {
       box-sizing: border-box;
 
@@ -41,7 +38,7 @@
 <div id="container">
     <div class="column-6">
         <div id="left-wrapper">
-            <img id="profile-pic" src="{% static 'images/Haashir Bin Shakeel' %}">
+            <img id="profile-pic" src="{% static 'images/Haashir Bin Shakeel.jpeg' %}">
             <div id="left-wrapper-header">
                 <h3>Buy Me Coffee?</h3>
                 <h5>One Time Donation</h5>
@@ -113,7 +110,7 @@
 
 <script>
     // Create a Stripe client.
-    var stripe = Stripe('YOUR PUBLIC KEY');
+    var stripe = Stripe('pk_test_51Kd8gGAWQSg3LicKNmta2JD6X7TjWOxIQVacEWmqdo7axOsSBXF5PsMsEg3Hm0a65qw4LN4tR07DRnqlYSx4ISHN00FA48hr56');
 
     // Create an instance of Elements.
     var elements = stripe.elements();
