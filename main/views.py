@@ -5,7 +5,8 @@ def index(request):
     return render(request,'main/index.html')
 
 def charge(request):
-    return 
+    return
 
-def success(request):
-    return render(request,'main/success.html')
+def success(request, args):
+    amount = args
+    return render(request,'main/success.html', {'amount': amount})
