@@ -1,0 +1,1 @@
+web: gunicorn buymeCoffee.wsgi --log-file -
